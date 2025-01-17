@@ -2,7 +2,7 @@
 CC = cc
 
 # Flags de compilação
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror_text
 
 # Nome do executável final
 NAME = so_long

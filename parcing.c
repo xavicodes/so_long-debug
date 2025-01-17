@@ -1,9 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parcing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xaviermonteiro <xaviermonteiro@student.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 19:14:48 by xaviermonte       #+#    #+#             */
+/*   Updated: 2025/01/13 19:26:51 by xaviermonte      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "so_long.h"
 
-void error()
+void error_text_text(t_data*vars)
 {
-        write(1,"error\n",7);
-        exit(1);
+        cleanup(vars);
+	ft_putstr_fd("error\n", 1);
+	exit(EXIT_FAILURE);
 }
 
 int     verify_map_name(char **av)

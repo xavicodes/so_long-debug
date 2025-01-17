@@ -6,7 +6,7 @@
 /*   By: xaviermonteiro <xaviermonteiro@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/20 12:38:30 by xaviermonte       #+#    #+#             */
-/*   Updated: 2025/01/13 14:37:57 by xaviermonte      ###   ########.fr       */
+/*   Updated: 2025/01/13 19:22:12 by xaviermonte      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,12 @@ int main(int ac, char **av)
                 else
                         return(1);
         vars.mlx = mlx_init();
-        /* create_window(&vars);
+         create_window(&vars);
         store_sprites(&vars);
         draw_game(&vars);
         game_hooks(&vars);
         mlx_loop(&vars.mlx);
-        //mlx_destroy_image; */
-
+        mlx_destroy_sprites(vars);
+        free(vars.mlx);
         return(0);
-       
 } 

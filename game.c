@@ -1,11 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   game.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xaviermonteiro <xaviermonteiro@student.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 19:14:24 by xaviermonte       #+#    #+#             */
+/*   Updated: 2025/01/13 19:26:51 by xaviermonte      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #include "so_long.h"
+
 void count_moves(t_data *vars)
 {
         char *print_moves;
 
         print_moves = ft_itoa(vars->player.moves);
         if(!print_moves)
-                error();
+                error_text();
 
         
         mlx_string_put(vars->mlx,vars->mlx_window,5 , 10,0xFFFFFF, "moves");

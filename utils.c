@@ -1,19 +1,29 @@
-#include "so_long.h"
-void free_map(char **map, t_data *vars)
-{
-        int i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xaviermonteiro <xaviermonteiro@student.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 19:15:02 by xaviermonte       #+#    #+#             */
+/*   Updated: 2025/01/13 19:17:12 by xaviermonte      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-        i = 0;
-        while(map[i])
-        i++;
-        while(i > 0)
-        {
-                free(map[i]);
-        i--;
-        }
-        
-        free(map);
-        free(vars);
+
+#include "so_long.h"
+
+void free_map(char **map,int rows)
+{
+        int	i;
+
+	i = 0;
+	while (i < rows)
+	{
+		free(map[i]);
+		i++;
+	}
+	free(map);
 }
 int strlen_no_n(char *map)
 {
@@ -76,7 +86,7 @@ void count_elements(t_data *vars,int *p_count, int *c_count, int *e_count)
                 else if(vars->game.map[i][j] == 'E')
                         (*e_count)++;
                 else if(vars->game.map[i][j] != '1' || vars->game.map[i][j] != '0')
-                        error();
+                        error_text();
                 j++;
                 }
         i++;

@@ -1,18 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xaviermonteiro <xaviermonteiro@student.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/13 19:14:56 by xaviermonte       #+#    #+#             */
+/*   Updated: 2025/01/13 19:26:51 by xaviermonte      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 #ifndef SO_LONG
 
 #define SO_LONG
 
 #include <unistd.h>
 #include <fcntl.h>
-#include "minilibx-linux/mlx.h"
+//#include "minilibx-linux/mlx.h"
 #include "libft/libft.h"
-
-#define FLOOR  '0'
-#define WALL  '1'
-#define COLECTABLE 'C'
-#define EXIT    'E'
-#define PLAYER  'P'
-
 
 # define ESC 65307
 
@@ -80,9 +86,9 @@ typedef struct s_data
 //parsing--------------
 int     verify_map_name(char **av);
 int read_map(char *file,t_data *vars);
-//error----------
-void error();
-void free_map(char **map, t_data *vars);
+//error_text----------
+void error_text_text(t_data *vars);
+void free_map(char **map, int i);
 int close_window(t_data *vars);
 //map_utils---------
 int strlen_no_n(char *map);
@@ -108,4 +114,7 @@ void move_player(t_data *vars, int x_dif, int y_dif);
 int key_hooks(t_data *vars, int key);
 void game_hooks(t_data *vars);
 
+//finish game-------------------
+void destroy_sprites(t_data *vars);
+void clean_map(t_data *vars);
 #endif

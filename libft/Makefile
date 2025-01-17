@@ -3,7 +3,7 @@ LIB = libft.a
 
 # Compiler and flags
 CC = cc
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror_text -Wextra
 
 # Source files (libft and ft_printf)
 SRC = ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
